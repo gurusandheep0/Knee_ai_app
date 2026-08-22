@@ -9,6 +9,30 @@ JSON/CSV exports.
 > **Prototype only:** This is not a medical device. It must not be used for
 > diagnosis, treatment, surgical planning, or autonomous implant selection.
 
+## Application output
+
+These screenshots were captured from the bundled synthetic demo. No patient data
+or external service is used.
+
+[![KneeAI overview](docs/screenshots/01-overview.jpg)](docs/screenshots/01-overview.jpg)
+
+<details>
+<summary><strong>Open the complete output gallery</strong></summary>
+
+| Image and mask verification | Quantitative measurements |
+| --- | --- |
+| [![Image analysis](docs/screenshots/02-image-analysis.jpg)](docs/screenshots/02-image-analysis.jpg) | [![Quantitative output](docs/screenshots/02-quantitative-output.jpg)](docs/screenshots/02-quantitative-output.jpg) |
+
+| Implant matching | Cohort insights |
+| --- | --- |
+| [![Implant matching](docs/screenshots/03-implant-matching.jpg)](docs/screenshots/03-implant-matching.jpg) | [![Cohort insights](docs/screenshots/04-cohort-insights.jpg)](docs/screenshots/04-cohort-insights.jpg) |
+
+| Structured export | Report downloads |
+| --- | --- |
+| [![Export report](docs/screenshots/05-export-report.jpg)](docs/screenshots/05-export-report.jpg) | [![Export downloads](docs/screenshots/05-export-downloads.jpg)](docs/screenshots/05-export-downloads.jpg) |
+
+</details>
+
 ## Fastest way to run
 
 Python 3.10 or newer is required. From this directory, run:
@@ -20,6 +44,14 @@ python start.py
 `start.py` works on Windows, macOS, and Linux. On its first run it creates an
 isolated `.venv`, installs the pinned dependencies, and starts the application.
 Open <http://localhost:8501> if a browser does not open automatically.
+
+`localhost` and `127.0.0.1` identify the same computer. Port `8501` is the
+default; if it is already occupied, start on another port and open the URL shown
+in the terminal, for example:
+
+```bash
+.venv/bin/python -m streamlit run app.py --server.address=127.0.0.1 --server.port=8502
+```
 
 Convenience launchers are also included:
 
@@ -129,6 +161,7 @@ knee_ai/                Image I/O, demo generation, measurements, matching
 data/                    Synthetic implant catalogue and cohort
 models/                  Validated-model integration point
 tests/                   Unit and pipeline tests
+docs/screenshots/        Application output gallery used by this README
 start.py                 Cross-platform first-run launcher
 Dockerfile, compose.yaml Reproducible container deployment
 ```
