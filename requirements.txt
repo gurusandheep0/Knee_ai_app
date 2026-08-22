@@ -1,0 +1,7 @@
+streamlit==1.48.1
+numpy==2.2.6
+pandas==2.2.3
+plotly==6.2.0
+Pillow==11.2.1
+pydicom==3.0.1
+nibabel==5.3.2
